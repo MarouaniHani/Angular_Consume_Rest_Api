@@ -1,0 +1,17 @@
+<div class="example-container">
+  <form [formGroup]="registerForm" (ngSubmit)="submit()">
+    <mat-form-field>
+      <input matInput placeholder="Title" formControlName="title" required [(ngModel)]="titre">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <textarea matInput placeholder="Content" formControlName="content" [(ngModel)]="contenu"></textarea>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" [disabled]="submited">Subbmit</button>
+    <div *ngIf="isLoading">
+      loading ...
+    </div>
+
+  </form>
+</div>
